@@ -1,0 +1,9 @@
+sources:
+  - name: case_study
+    database: postgres  
+    schema: case_study_raw  
+    tables:
+      - name: orders
+      - name: customers
+      - name: order_items
+      - name: products

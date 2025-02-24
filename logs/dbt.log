@@ -1,0 +1,46 @@
+[0m17:53:42.534356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027303F27090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000273028BBE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027303D3E2D0>]}
+
+
+============================== 17:53:42.543538 | c0863a0e-6914-48fb-8f3a-c44fe5021b3f ==============================
+[0m17:53:42.543538 [info ] [MainThread]: Running with dbt=1.9.2
+[0m17:53:42.543538 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\ehesami\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init workshop_demo', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:53:42.565101 [debug] [MainThread]: Starter project path: C:\Users\ehesami\AppData\Local\anaconda3\envs\postgresql_env2\Lib\site-packages\dbt\include\starter_project
+[0m17:53:42.609448 [info ] [MainThread]: 
+Your new dbt project "workshop_demo" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:53:42.612199 [info ] [MainThread]: Setting up your profile.
+[0m17:53:42.617202 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m17:53:42.620000 [debug] [MainThread]: Command `dbt init` failed at 17:53:42.620000 after 0.28 seconds
+[0m17:53:42.620000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027303F2C210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027303F26050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027303F25ED0>]}
+[0m17:53:42.620000 [debug] [MainThread]: Flushing usage events
+[0m17:53:43.700853 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:00:36.034193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017979E27B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017979E6B650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017979E6BB90>]}
+
+
+============================== 12:00:36.034193 | 11f92140-2d9f-42ea-a84f-be1202b75216 ==============================
+[0m12:00:36.034193 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:00:36.043203 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\ehesami\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:00:36.043203 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Codes\postgresql-project\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:00:36.043203 [debug] [MainThread]: Command `dbt test` failed at 12:00:36.043203 after 0.16 seconds
+[0m12:00:36.047180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017979E2C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017979E25490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017979E27490>]}
+[0m12:00:36.047180 [debug] [MainThread]: Flushing usage events
+[0m12:00:37.002559 [debug] [MainThread]: An error was encountered while trying to flush usage events
