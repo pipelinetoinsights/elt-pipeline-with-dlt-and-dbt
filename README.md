@@ -33,7 +33,7 @@ To set up and run the ELT pipeline on your local machine, follow these steps:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/pipelinetoinsights/elt-case-study-pipeline.git
+   git clone https://github.com/pipelinetoinsights/elt-pipeline-with-dlt-and-dbt.git
    cd elt-case-study-pipeline
    ```
 
@@ -42,7 +42,7 @@ To set up and run the ELT pipeline on your local machine, follow these steps:
    ```bash
    pip install -r requirement.txt
    ```
-3. **create secrect.toml file in .dlt and fill out the postgres info**
+3. **create secrets.toml file in .dlt and fill out the postgres info**
 
 ```bash
 [destination.postgres.credentials]
