@@ -73,7 +73,3 @@ Execute the ingestion script to extract raw data and load it into the system:
    python transformation_pipeline.py
    ```
    This will apply necessary transformations and output the processed data ready for analysis.
-
----
-
-*Note: 
