@@ -1,7 +1,6 @@
 # ELT Case Study Pipeline
 
-This repository contains an ELT (Extract, Load, Transform) pipeline designed to process sales data. The pipeline ingests raw data, applies necessary transformations, and prepares it for analysis.
-
+This repository contains an ELT (Extract, Load, Transform) pipeline designed to process customer transactions. The pipeline ingests raw data, applies necessary transformations, and prepares it for analysis using dlt,dbt and postgres sql.
 ## Project Structure
 
 The repository is organised as follows:
@@ -50,7 +49,7 @@ database = "" # please set me up!
 password = "" # please set me up!
 username = "" # please set me up!
 host = "" # please set me up!
-port = 
+port = "" # please set me up!
 connect_timeout = 15
 
    ```
