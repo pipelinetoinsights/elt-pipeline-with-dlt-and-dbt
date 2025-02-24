@@ -39,10 +39,10 @@ pipeline = dlt.pipeline(pipeline_name="case_study_pipeline",
                         dataset_name='case_study_raw')
 
 # Create three extract pipes that list files from the file system and send them to the reader
-file1_pipe = fs_resource("C://Codes/postgresql-project/data/raw_parquet/customers.parquet") | parquet_reader()
-file2_pipe = fs_resource("C://Codes/postgresql-project/data/raw_parquet/orders.parquet") | parquet_reader()
-file3_pipe = fs_resource("C://Codes/postgresql-project/data/raw_parquet/order_items.parquet") | parquet_reader()
-file4_pipe = fs_resource("C://Codes/postgresql-project/data/raw_parquet/products.parquet") | parquet_reader()
+file1_pipe = fs_resource("C://Codes/elt-case-study-project/data/raw/customers.parquet") | parquet_reader()
+file2_pipe = fs_resource("C://Codes/elt-case-study-project/data/raw/orders.parquet") | parquet_reader()
+file3_pipe = fs_resource("C://Codes/elt-case-study-project/data/raw/order_items.parquet") | parquet_reader()
+file4_pipe = fs_resource("C://Codes/elt-case-study-project/data/raw/products.parquet") | parquet_reader()
 
 # Run the pipeline with renamed resources to load to different tables
 load_info = pipeline.run([
@@ -52,25 +52,3 @@ load_info = pipeline.run([
     file4_pipe.with_name("products"),
 ])
 print(load_info)
-
-### transfromation 
-    # get venv for dbt
-venv = dlt.dbt.get_venv(pipeline)
-
-    # get runner
-dbt = dlt.dbt.package(
-      pipeline,
-        "transformation",
-        venv=venv
-   )
-
-    # run the dbt models
-models = dbt.run_all()
-
-for m in models:
-    print(
-           f"Model {m.model_name} materialized" +
-          f"in {m.time}" +
-           f"with status {m.status}" +
-           f"and message {m.message}"
-       )
