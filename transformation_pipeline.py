@@ -24,7 +24,7 @@ if __name__ == "__main__":
     for m in models:
         print(
             f"Model {m.model_name} materialized" +
-            f"in {m.time}" +
-            f"with status {m.status}" +
-            f"and message {m.message}"
+            f" in {m.time}" +
+            f" with status {m.status}" +
+            f" and message {m.message}"
         )
