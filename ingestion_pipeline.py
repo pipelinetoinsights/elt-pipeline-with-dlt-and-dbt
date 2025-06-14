@@ -3,6 +3,7 @@ from pathlib import Path
 import pyarrow.parquet as pq
 from typing import Iterator, Dict, Any
 
+
 @dlt.resource(standalone=True)
 def fs_resource(file_path: str) -> Iterator[Dict[str, str]]:
     """
@@ -10,15 +11,13 @@ def fs_resource(file_path: str) -> Iterator[Dict[str, str]]:
     """
     # Convert string path to Path object
     path = Path(file_path)
-    
+
     # Verify file exists and is a parquet file
-    if path.exists() and path.suffix == '.parquet':
-        yield {
-            "file_path": str(path.absolute()),
-            "filename": path.name
-        }
+    if path.exists() and path.suffix == ".parquet":
+        yield {"file_path": str(path.absolute()), "filename": path.name}
     else:
         raise FileNotFoundError(f"Parquet file not found at {file_path}")
+
 
 @dlt.transformer
 def parquet_reader(file_item: Dict[str, Any]) -> Iterator[Dict[str, Any]]:
@@ -26,16 +25,15 @@ def parquet_reader(file_item: Dict[str, Any]) -> Iterator[Dict[str, Any]]:
     Loads a parquet file and yields its rows
     """
     # Read the parquet file using pyarrow
-    table = pq.read_table(file_item['file_path'])
-    
+    table = pq.read_table(file_item["file_path"])
+
     # Convert to records and yield each one
     for record in table.to_pylist():
         yield record
 
+
 # Create the pipeline
-pipeline = dlt.pipeline(pipeline_name="case_study_pipeline", 
-                        destination='postgres', 
-                        dataset_name='case_study_raw')
+pipeline = dlt.pipeline(pipeline_name="case_study_pipeline", destination="postgres", dataset_name="case_study_raw")
 
 # Create three extract pipes that list files from the file system and send them to the reader
 customers_pipe = fs_resource("./data/raw/customers.parquet") | parquet_reader()
@@ -44,10 +42,12 @@ order_items_pipe = fs_resource("./data/raw/order_items.parquet") | parquet_reade
 products_pipe = fs_resource("./data/raw/products.parquet") | parquet_reader()
 
 # Run the pipeline with renamed resources to load to different tables
-load_info = pipeline.run([
-    customers_pipe.with_name("customers"),
-    orders_pipe.with_name("orders"),
-    order_items_pipe.with_name("order_items"),
-    products_pipe.with_name("products"),
-])
+load_info = pipeline.run(
+    [
+        customers_pipe.with_name("customers"),
+        orders_pipe.with_name("orders"),
+        order_items_pipe.with_name("order_items"),
+        products_pipe.with_name("products"),
+    ]
+)
 print(load_info)

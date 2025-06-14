@@ -1,11 +1,53 @@
-# ignore secrets, virtual environments and typical python compilation artifacts
-secrets.toml
-# ignore basic python artifacts
+# Secrets and environment configs
 .env
+secrets.toml
+.gitignore
+
+# Python cache and bytecode files
+__pycache__/
 **/__pycache__/
-**/*.py[cod]
-**/*$py.class
-# ignore duckdb
+*.py[cod]
+*$py.class
+
+# Virtual environment folders (optional, adjust based on your setup)
+venv/
+.env/
+.env.bak/
+.venv/
+
+# DuckDB database and write-ahead log files
 *.duckdb
 *.wal
-*.ipynb
+
+# OS-specific files (optional but recommended)
+.DS_Store
+Thumbs.db
+
+
+# Secrets and environment configs
+.env
+secrets.toml
+
+# Python cache and bytecode files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+.venv_dbt_dlt/
+env/
+.venv/
+venv/
+**/env/
+**/.venv/
+**/venv/
+
+# DuckDB database and write-ahead log files
+*.duckdb
+*.wal
+
+# OS and editor-specific junk
+.DS_Store
+Thumbs.db
+.vscode/

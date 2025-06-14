@@ -1,0 +1,12 @@
+[tool.black]
+line-length = 127
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.dlt
+  | logs
+  | data
+  | __pycache__
+)/
+''' 
