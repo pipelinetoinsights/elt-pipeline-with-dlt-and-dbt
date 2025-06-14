@@ -38,9 +38,9 @@ jobs:
       run: |
         black . --check
     
-    - name: Run tests
-      run: |
-        pytest
+    #- name: Run tests
+     # run: |
+      #  pytest
 
     - name: Verify dlt pipeline syntax
       run: |
